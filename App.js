@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Navigator from './routes/AppNavigator'
 
 function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text>Helssslo, World!</Text>
-      <Text>Added new line and publishing it to github</Text>
+      <Navigator />
     </View>
   );
 }
