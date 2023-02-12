@@ -6,6 +6,7 @@ function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Text>Helssslo, World!</Text>
+      <Text>Added new line and publishing it to github</Text>
     </View>
   );
 }
