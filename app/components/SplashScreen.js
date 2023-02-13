@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { View, Image, Text, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
-const SplashScreen = ({ navigation }) => {
+const Splash = ({ navigation }) => {
+  const [isSplash, setIsSplash] = useState(true);
+
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('Main');
-    }, 5000);
+      setIsSplash(false);
+    }, 3000);
   }, []);
+
+  if (!isSplash) {
+    navigation.replace('App');
+  }
 
   return (
     <View style={styles.container}>
       <Image
-        source={require('../assets/splash_ic.png')}
         style={styles.logo}
+        source={require('../assets/splash_ic.png')}
       />
-      <Text style={styles.text}>Prada Calc</Text>
     </View>
   );
 };
@@ -29,13 +34,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 200,
     height: 200,
-    resizeMode: 'contain',
-  },
-  text: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginTop: 20,
   },
 });
 
-export default SplashScreen;
+export default Splash;
